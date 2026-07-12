@@ -1712,7 +1712,7 @@ class Component extends DCLogic {
       icon: React.createElement('i', { className: 'bi ' + stuckIconPaths[i % stuckIconPaths.length], style: { fontSize: '15px', color: '#A6650F' } }),
     }));
     const navItems = Object.keys(t.nav).map((id) => ({ id: id === 'welcome' ? 'top' : id, label: t.nav[id], href: '#' + (id === 'welcome' ? 'top' : id) }));
-    const quickNavItems = [{ id: 'home', label: t.homeLabel, href: '/' }].concat(navItems).concat([{ id: 'visa', label: t.visaLinkLabel, href: '/visa/' }]);
+    const quickNavItems = [{ id: 'home', label: t.homeLabel, href: '/' }].concat(navItems).concat([{ id: 'visa', label: t.visaLinkLabel, href: '/visa-requirements/' }]);
 
     const closeNavGroupSticky = () => this.setState({ openNavGroupSticky: null });
     const closeNavGroupMast = () => this.setState({ openNavGroupMast: null });
@@ -1722,7 +1722,7 @@ class Component extends DCLogic {
       { key: 'process', ids: ['how', 'documents', 'nicaragua', 'tips'] },
       { key: 'where', ids: ['consulates', 'canada'] },
       { key: 'help', ids: showNews ? ['stuck', 'faq', 'news'] : ['stuck', 'faq'] },
-      { key: 'visa', single: true, external: true, label: t.visaLinkLabel, href: '/visa/' },
+      { key: 'visa', single: true, external: true, label: t.visaLinkLabel, href: '/visa-requirements/' },
     ];
     const buildNavGroups = (stateKey, closeFn) => NAV_GROUP_DEFS.map((def) => {
       if (def.single) {
