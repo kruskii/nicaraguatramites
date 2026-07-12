@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>Nicaragua Passport & Visa Guide | NicaraguaTrámites</title>
+<meta name="description" content="Independent, community-updated guide to Nicaraguan passport renewal and Nicaragua visa requirements — for Nicaraguans abroad and travelers worldwide.">
+<meta property="og:title" content="Nicaragua Passport & Visa Guide | NicaraguaTrámites">
+<meta property="og:description" content="Independent, community-updated guide to Nicaraguan passport renewal and Nicaragua visa requirements — for Nicaraguans abroad and travelers worldwide.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="es_419">
+<meta property="og:url" content="https://nicaraguatramites.com/">
+<link rel="canonical" href="https://nicaraguatramites.com/">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400&family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+<style>
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:#faf8f3;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+::selection{background:#cfe3f6}
+a{color:#0d5bb0;text-decoration:none}
+a:hover{color:#0a4890}
+.np-link{color:#0d5bb0;text-decoration:none;border-bottom:1px solid rgba(13,91,176,.28);transition:border-color .15s}
+.np-link:hover{border-bottom-color:#0d5bb0}
+.np-card{transition:border-color .15s,box-shadow .15s,transform .15s}
+.np-card:hover{border-color:#0d5bb0;box-shadow:0 10px 28px rgba(13,91,176,.14);transform:translateY(-2px)}
+</style>
+</helmet>
+<div style="font-family:'Archivo',system-ui,sans-serif;color:#23211a;background:#faf8f3;min-height:100vh">
+
+<!-- MASTHEAD -->
+<header style="max-width:1180px;margin:0 auto;padding:0 28px">
+  <div style="display:flex;align-items:flex-end;justify-content:space-between;gap:24px;padding:30px 0 22px;flex-wrap:wrap">
+    <div>
+      <div style="font-family:'Newsreader',serif;font-weight:700;font-size:{{ wordmarkSize }};letter-spacing:-.02em;line-height:1;background:linear-gradient(90deg,#1A56B0 0%,#0D1F3C 100%);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent">NicaraguaTr&aacute;mites</div>
+      <div style="display:flex;flex-direction:column;height:9px;width:100%;margin-top:6px">
+        <div style="flex:1;background:#1A56B0"></div>
+        <div style="flex:1;background:#FFFFFF"></div>
+        <div style="flex:1;background:#1A56B0"></div>
+      </div>
+      <div style="font-size:11.5px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:#8a8475;margin-top:9px">{{ t.tagline }}</div>
+    </div>
+    <div style="display:flex;align-items:center;gap:9px;flex:none;padding-bottom:4px">
+      <button onClick="{{ setEn }}" style="{{ enStyle }}">EN</button>
+      <span style="color:#cbc5b6;font-size:13px">/</span>
+      <button onClick="{{ setEs }}" style="{{ esStyle }}">ES</button>
+    </div>
+  </div>
+  <div style="height:2px;background:#1a1812"></div>
+</header>
+
+<!-- WELCOME / TRUST -->
+<div style="max-width:1180px;margin:0 auto;padding:0 28px">
+  <div style="max-width:980px;margin:56px auto 0;text-align:center">
+    <div style="font-size:12px;font-weight:600;letter-spacing:.13em;text-transform:uppercase;color:#0d5bb0;margin-bottom:14px">{{ t.updated }}</div>
+    <h1 style="font-family:'Newsreader',serif;font-weight:700;font-size:{{ topHeroSize }};line-height:1.08;letter-spacing:-.02em;color:#161410;margin:0">{{ t.topHero.headline }}</h1>
+    <p style="font-family:'Newsreader',serif;font-size:19px;line-height:1.5;color:#403c33;margin:16px auto 0;font-weight:400">{{ t.subhead }}</p>
+  </div>
+  <div style="max-width:980px;margin:56px auto 0">
+    <p style="font-size:16.5px;line-height:1.68;color:#3a362c;margin:0 0 20px">{{ t.trust.body }}</p>
+    <a href="https://www.reddit.com/r/Nicaragua/" target="_blank" rel="noopener" class="np-link" style="font-size:14.5px;font-weight:600">{{ t.trust.redditLabel }}</a>
+  </div>
+
+  <!-- THE FORK -->
+  <div style="max-width:980px;margin:52px auto 0;display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:24px">
+    <a href="pasaporte/es/" class="np-card" style="display:flex;flex-direction:column;border:1.5px solid #1a1812;border-radius:14px;background:#fff;padding:36px 32px;text-decoration:none">
+      <i class="bi bi-passport" style="font-size:34px;color:#0d5bb0;margin-bottom:20px"></i>
+      <div style="font-family:'Newsreader',serif;font-size:25px;font-weight:600;color:#1a1812;letter-spacing:-.01em;margin-bottom:12px">{{ t.card1.title }}</div>
+      <div style="font-size:15px;line-height:1.6;color:#5b5648;flex:1">{{ t.card1.body }}</div>
+      <div style="display:inline-flex;align-items:center;gap:8px;background:#0d5bb0;color:#fff;font-size:14.5px;font-weight:600;padding:13px 22px;margin-top:24px;align-self:flex-start;letter-spacing:.01em">{{ t.card1.cta }}</div>
+    </a>
+    <a href="visa/" class="np-card" style="display:flex;flex-direction:column;border:1.5px solid #1a1812;border-radius:14px;background:#fff;padding:36px 32px;text-decoration:none">
+      <i class="bi bi-file-earmark-text" style="font-size:34px;color:#0d5bb0;margin-bottom:20px"></i>
+      <div style="font-family:'Newsreader',serif;font-size:25px;font-weight:600;color:#1a1812;letter-spacing:-.01em;margin-bottom:12px">{{ t.card2.title }}</div>
+      <div style="font-size:15px;line-height:1.6;color:#5b5648;flex:1">{{ t.card2.body }}</div>
+      <div style="display:inline-flex;align-items:center;gap:8px;background:#0d5bb0;color:#fff;font-size:14.5px;font-weight:600;padding:13px 22px;margin-top:24px;align-self:flex-start;letter-spacing:.01em">{{ t.card2.cta }}</div>
+    </a>
+  </div>
+
+  <!-- FOOTER -->
+  <div style="margin:72px auto 0;padding:0 0 90px">
+    <footer style="border-top:1px solid rgba(0,0,0,.12);padding-top:22px">
+      <div style="font-family:'Newsreader',serif;font-weight:600;font-size:16px;color:#1a1812;margin-bottom:8px">NicaraguaTr&aacute;mites</div>
+      <p style="font-size:12.5px;line-height:1.6;color:#9a9384;margin:0">{{ t.footer.text }}</p>
+    </footer>
+  </div>
+</div>
+
+<sc-if value="{{ !cookieChoice }}" hint-placeholder-val="{{ false }}">
+<div style="position:fixed;left:0;right:0;bottom:0;z-index:70;background:#1a1812;color:#f4efe3;padding:16px 20px;display:flex;align-items:center;gap:16px;flex-wrap:wrap;box-shadow:0 -6px 20px rgba(0,0,0,.2)">
+  <p style="margin:0;font-size:13.5px;line-height:1.5;flex:1 1 260px;color:#e4dfd2">{{ t.cookieBanner.text }}</p>
+  <div style="display:flex;gap:10px;flex:none">
+    <button onClick="{{ declineCookies }}" style="background:none;color:#e4dfd2;border:1.5px solid rgba(244,239,227,.4);border-radius:999px;font-family:inherit;font-size:13px;font-weight:600;padding:9px 16px;cursor:pointer">{{ t.cookieBanner.decline }}</button>
+    <button onClick="{{ acceptCookies }}" style="background:#2E7FD1;color:#fff;border:none;border-radius:999px;font-family:inherit;font-size:13px;font-weight:600;padding:9px 18px;cursor:pointer">{{ t.cookieBanner.accept }}</button>
+  </div>
+</div>
+</sc-if>
+
+</div>
+
+<template id="__bundler_thumbnail" data-bg-color="#faf8f3">
+  <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+    <rect x="330" y="150" width="540" height="50" rx="4" fill="#0d5bb0"/>
+    <rect x="330" y="260" width="250" height="280" fill="#ffffff" stroke="#1a1812" stroke-width="6"/>
+    <rect x="620" y="260" width="250" height="280" fill="#ffffff" stroke="#1a1812" stroke-width="6"/>
+  </svg>
+</template>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = {
+    lang: (typeof localStorage !== 'undefined' && localStorage.getItem('np_lang')) || 'en',
+    isMobile: false,
+    cookieChoice: (typeof localStorage !== 'undefined' && localStorage.getItem('np_cookie_consent')) || null,
+    feedbackMenuOpen: false,
+  };
+
+  componentDidMount() {
+    this._onResize = () => {
+      const m = window.innerWidth < 720;
+      if (m !== this.state.isMobile) this.setState({ isMobile: m });
+    };
+    window.addEventListener('resize', this._onResize);
+    this._onResize();
+  }
+  componentWillUnmount() {
+    window.removeEventListener('resize', this._onResize);
+  }
+
+  CONTENT = {
+    en: {
+      tagline: 'Community Guide to Nicaraguan Procedures · Worldwide',
+      updated: 'Updated July 2026',
+      topHero: {
+        headline: 'Nicaragua Passport & Visa Guide',
+      },
+      headline: 'What do you need to do today?',
+      subhead: 'A clear, independent, community-updated guide — for Nicaraguans abroad and travelers from around the world.',
+      card1: {
+        title: 'Passport Renewal',
+        body: 'Do you live abroad and need to renew your Nicaraguan passport? We\u2019ll guide you step by step.',
+        cta: 'Start here \u2192',
+      },
+      card2: {
+        title: 'Visa Requirements',
+        body: 'Do you need a visa to enter Nicaragua? Check your country and find out how to apply.',
+        cta: 'Check my country \u2192',
+      },
+      trust: {
+        kicker: 'Why this site exists',
+        body: 'Welcome \uD83D\uDC4B. This site exists because Nicaraguans abroad and travelers everywhere kept running into the same scattered, outdated information about passports and visas. Our goal: centralize what we\u2019ve learned, and keep it current — with help from the community.',
+        redditLabel: 'Ask the community on r/Nicaragua',
+      },
+      footer: {
+        text: 'NicaraguaTr\u00e1mites is an independent community resource, not affiliated with or endorsed by the Government of Nicaragua. Procedures, fees, and requirements change frequently — always verify with official sources. Last updated July 2026.',
+      },
+      cookieBanner: { text: 'This site uses cookies to understand how visitors use this guide.', decline: 'Decline', accept: 'Accept' },
+      reportLabel: 'Report an issue',
+    },
+    es: {
+      tagline: 'Gu\u00eda Comunitaria de Tr\u00e1mites Nicarag\u00fcenses · Mundial',
+      updated: 'Actualizado julio 2026',
+      topHero: {
+        headline: 'Gu\u00eda de Pasaporte y Visa de Nicaragua',
+      },
+      headline: '\u00bfQu\u00e9 necesitas hacer hoy?',
+      subhead: 'Una gu\u00eda clara, independiente y actualizada por la comunidad — para nicarag\u00fcenses en el exterior y viajeros de todo el mundo.',
+      card1: {
+        title: 'Renovaci\u00f3n de Pasaporte',
+        body: '\u00bfVives en el exterior y necesitas renovar tu pasaporte nicarag\u00fcense? Te guiamos paso a paso.',
+        cta: 'Empezar aqu\u00ed \u2192',
+      },
+      card2: {
+        title: 'Requisitos de Visa',
+        body: '\u00bfNecesitas visa para entrar a Nicaragua? Consulta tu pa\u00eds y descubre c\u00f3mo tramitarla.',
+        cta: 'Consultar mi pa\u00eds \u2192',
+      },
+      trust: {
+        kicker: 'Por qu\u00e9 existe este sitio',
+        body: 'Bienvenido \uD83D\uDC4B. Este sitio existe porque nicarag\u00fcenses en el exterior y viajeros de todo el mundo segu\u00edan encontrando la misma informaci\u00f3n dispersa y desactualizada sobre pasaportes y visas. Nuestro objetivo: centralizar lo que hemos aprendido, y mantenerlo actualizado — con la ayuda de la comunidad.',
+        redditLabel: 'Pregunta a la comunidad de Reddit en r/Nicaragua',
+      },
+      footer: {
+        text: 'NicaraguaTr\u00e1mites es un recurso comunitario independiente, sin afiliaci\u00f3n ni respaldo del Gobierno de Nicaragua. Los procedimientos, tarifas y requisitos cambian con frecuencia — verifica siempre con fuentes oficiales. \u00daltima actualizaci\u00f3n julio 2026.',
+      },
+      cookieBanner: { text: 'Este sitio usa cookies para entender c\u00f3mo los visitantes usan esta gu\u00eda.', decline: 'Rechazar', accept: 'Aceptar' },
+      reportLabel: 'Reportar un problema',
+    },
+  };
+
+  setEs = () => { if (typeof localStorage !== 'undefined') localStorage.setItem('np_lang', 'es'); this.setState({ lang: 'es' }); };
+  setEn = () => { if (typeof localStorage !== 'undefined') localStorage.setItem('np_lang', 'en'); this.setState({ lang: 'en' }); };
+  langBtnStyle(active) {
+    return 'appearance:none;border:none;background:none;cursor:pointer;font-family:Archivo,system-ui,sans-serif;font-size:13px;font-weight:700;letter-spacing:.04em;padding:2px 2px;color:' + (active ? '#0d5bb0' : '#b3ad9d') +
+      ';border-bottom:2px solid ' + (active ? '#0d5bb0' : 'transparent') + ';transition:color .15s';
+  }
+  acceptCookies = () => { localStorage.setItem('np_cookie_consent','accepted'); this.setState({ cookieChoice:'accepted' }); };
+  declineCookies = () => { localStorage.setItem('np_cookie_consent','declined'); this.setState({ cookieChoice:'declined' }); };
+  toggleFeedbackMenu = () => this.setState(s => ({ feedbackMenuOpen: !s.feedbackMenuOpen }));
+
+  renderVals() {
+    const lang = this.state.lang;
+    const t = this.CONTENT[lang];
+    const isMobile = this.state.isMobile;
+    const wordmarkSize = isMobile ? '27px' : '34px';
+    const topHeroSize = isMobile ? '38px' : '56px';
+    const heroSize = isMobile ? '26px' : '34px';
+    const esStyle = this.langBtnStyle(lang === 'es');
+    const enStyle = this.langBtnStyle(lang === 'en');
+    const fabStyle = 'position:fixed;right:24px;bottom:24px;z-index:71;display:inline-flex;align-items:center;justify-content:center;width:52px;height:52px;background:#2E7FD1;color:#fff;border:none;border-radius:999px;cursor:pointer;box-shadow:0 6px 20px rgba(13,91,176,.35)';
+    const fabIcon = this.state.feedbackMenuOpen ? '\u00d7' : '\ud83d\udc4b';
+    const fabIconTransform = this.state.feedbackMenuOpen ? 'rotate(90deg)' : 'rotate(0deg)';
+
+    return {
+      t, lang, setEs: this.setEs, setEn: this.setEn, esStyle, enStyle,
+      wordmarkSize, topHeroSize, heroSize,
+      cookieChoice: this.state.cookieChoice, acceptCookies: this.acceptCookies, declineCookies: this.declineCookies,
+      feedbackMenuOpen: this.state.feedbackMenuOpen, toggleFeedbackMenu: this.toggleFeedbackMenu,
+      fabStyle, fabIcon, fabIconTransform,
+    };
+  }
+}
+
+</script>
+</body>
+</html>

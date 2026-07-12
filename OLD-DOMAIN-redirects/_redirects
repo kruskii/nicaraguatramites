@@ -1,0 +1,11 @@
+# Netlify/Cloudflare Pages style redirects — deploy this file at the ROOT of nicapasaporte.com
+# (the OLD domain). Keeps nicapasaporte.com registered/live and forwards all traffic to the
+# new nicaraguatramites.com pages, preserving SEO equity. Keep in place 6-12+ months.
+
+/                                    https://nicaraguatramites.com/pasaporte/es/   301
+/en/                                 https://nicaraguatramites.com/pasaporte/en/   301
+/en/*                                https://nicaraguatramites.com/pasaporte/en/   301
+/es/                                 https://nicaraguatramites.com/pasaporte/es/   301
+/es/*                                https://nicaraguatramites.com/pasaporte/es/   301
+/nicaragua-visa-requirements/        https://nicaraguatramites.com/visa            301
+/nicaragua-visa-requirements/*       https://nicaraguatramites.com/visa            301
