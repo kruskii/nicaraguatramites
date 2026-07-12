@@ -620,6 +620,7 @@ class Component extends DCLogic {
   }
 
   componentDidMount() {
+    if (typeof localStorage !== 'undefined') localStorage.setItem('np_lang', 'en');
     if (this.state.cookieChoice === 'accepted') this.loadGA();
     this._onScroll = () => {
       const past = window.scrollY > 150;
