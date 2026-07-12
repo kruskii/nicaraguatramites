@@ -2,21 +2,21 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://nicaraguatramites.com/</loc>
+    <loc>https://guiaconsularnicaragua.com/</loc>
   </url>
   <url>
-    <loc>https://nicaraguatramites.com/pasaporte/en/</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://nicaraguatramites.com/pasaporte/en/" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://nicaraguatramites.com/pasaporte/es/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://nicaraguatramites.com/pasaporte/es/" />
+    <loc>https://guiaconsularnicaragua.com/pasaporte/en/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://guiaconsularnicaragua.com/pasaporte/en/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://guiaconsularnicaragua.com/pasaporte/es/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://guiaconsularnicaragua.com/pasaporte/es/" />
   </url>
   <url>
-    <loc>https://nicaraguatramites.com/pasaporte/es/</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://nicaraguatramites.com/pasaporte/en/" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://nicaraguatramites.com/pasaporte/es/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://nicaraguatramites.com/pasaporte/es/" />
+    <loc>https://guiaconsularnicaragua.com/pasaporte/es/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://guiaconsularnicaragua.com/pasaporte/en/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://guiaconsularnicaragua.com/pasaporte/es/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://guiaconsularnicaragua.com/pasaporte/es/" />
   </url>
   <url>
-    <loc>https://nicaraguatramites.com/visa</loc>
+    <loc>https://guiaconsularnicaragua.com/visa-requirements</loc>
   </url>
 </urlset>

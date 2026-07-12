@@ -4,4 +4,4 @@
 location = / { return 301 https://nicaraguatramites.com/pasaporte/es/; }
 location ^~ /en/ { return 301 https://nicaraguatramites.com/pasaporte/en/; }
 location ^~ /es/ { return 301 https://nicaraguatramites.com/pasaporte/es/; }
-location ^~ /nicaragua-visa-requirements/ { return 301 https://nicaraguatramites.com/visa; }
+location ^~ /nicaragua-visa-requirements/ { return 301 https://nicaraguatramites.com/visa-requirements; }
