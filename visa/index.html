@@ -42,7 +42,7 @@ a{color:inherit}
 <!-- STICKY SLIM BAR -->
 <div style="{{ stickyBarStyle }}">
   <div style="{{ stickyInnerStyle }}">
-    <a href="../pasaporte/es/" class="np-nav-a" style="font-family:'Newsreader',serif;font-weight:600;font-size:18px;letter-spacing:-.01em;background:linear-gradient(90deg,#1A56B0 0%,#0D1F3C 100%);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent;white-space:nowrap;flex:none;order:1">NicaraguaTrámites</a>
+    <a href="{{ passportHref }}" class="np-nav-a" style="font-family:'Newsreader',serif;font-weight:600;font-size:18px;letter-spacing:-.01em;background:linear-gradient(90deg,#1A56B0 0%,#0D1F3C 100%);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent;white-space:nowrap;flex:none;order:1">NicaraguaTrámites</a>
     <sc-if value="{{ isDesktop }}" hint-placeholder-val="{{ true }}">
     <nav style="{{ stickyNavStyle }}">
       <sc-for list="{{ navGroupsComputedSticky }}" as="grp" hint-placeholder-count="4">
@@ -92,7 +92,7 @@ a{color:inherit}
 <!-- MASTHEAD -->
 <header id="top" style="max-width:1180px;margin:0 auto;padding:0 28px">
   <div style="display:flex;align-items:flex-end;justify-content:space-between;gap:16px;padding:30px 0 22px;flex-wrap:wrap">
-    <a href="../pasaporte/es/" style="text-decoration:none">
+    <a href="{{ passportHref }}" style="text-decoration:none">
       <div style="font-family:'Newsreader',serif;font-weight:700;font-size:34px;letter-spacing:-.02em;line-height:1;background:linear-gradient(90deg,#1A56B0 0%,#0D1F3C 100%);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent">NicaraguaTrámites</div>
       <div style="display:flex;flex-direction:column;height:9px;width:100%;margin-top:6px">
         <div style="flex:1;background:#1A56B0"></div>
@@ -730,10 +730,11 @@ class Component extends DCLogic {
     const isDesktop = !isMobile;
     const sticky = this.state.sticky;
 
+    const passportHref = lang === 'en' ? '../pasaporte/en/' : '../pasaporte/es/';
     const quickNavItems = [{ id: 'home', label: t.homeLabel, href: '../' }].concat(t.quickNav
       .filter((item) => item.id !== 'lookup')
       .map((item) => ({ ...item, href: '#' + item.id })))
-      .concat([{ id: 'passport', label: t.passportLinkLabel, href: '../pasaporte/es/' }]);
+      .concat([{ id: 'passport', label: t.passportLinkLabel, href: (lang === 'en' ? '../pasaporte/en/' : '../pasaporte/es/') }]);
 
     const closeNavGroupSticky = () => this.setState({ openNavGroupSticky: null });
     const closeNavGroupMast = () => this.setState({ openNavGroupMast: null });
@@ -745,7 +746,7 @@ class Component extends DCLogic {
       { key: 'requirements', ids: ['categoryc', 'novisa'] },
       { key: 'applying', ids: ['apply', 'verify', 'noembassy'] },
       { key: 'summary', single: true, id: 'summary' },
-      { key: 'passport', single: true, external: true, label: t.passportLinkLabel, href: '../pasaporte/es/' },
+      { key: 'passport', single: true, external: true, label: t.passportLinkLabel, href: (lang === 'en' ? '../pasaporte/en/' : '../pasaporte/es/') },
     ];
     const buildNavGroups = (stateKey, closeFn) => NAV_GROUP_DEFS.map((def) => {
       if (def.single) {
