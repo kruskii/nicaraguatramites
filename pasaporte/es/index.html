@@ -1779,10 +1779,10 @@ class Component extends DCLogic {
     const fadeMask = ';-webkit-mask-image:linear-gradient(to right,#000 84%,transparent);mask-image:linear-gradient(to right,#000 84%,transparent)';
     const stickyNavStyle = sm
       ? 'display:flex;justify-content:flex-start;gap:18px;overflow-x:auto;flex:0 0 100%;order:3;scrollbar-width:none' + fadeMask
-      : 'display:flex;justify-content:flex-start;gap:18px;overflow-x:auto;flex:1;order:2;scrollbar-width:none';
+      : 'display:flex;justify-content:flex-start;gap:18px;flex:1;min-width:0;order:2;flex-wrap:wrap';
     const mastNavStyle = sm
       ? 'display:flex;justify-content:flex-start;gap:26px;overflow-x:auto;padding:13px 0;scrollbar-width:none' + fadeMask
-      : 'display:flex;justify-content:flex-start;gap:26px;overflow-x:auto;padding:13px 0;scrollbar-width:none';
+      : 'display:flex;justify-content:flex-start;gap:26px;padding:13px 0;flex-wrap:wrap';
     const stickyToggleStyle = sm
       ? 'display:flex;align-items:center;gap:7px;flex:none;order:2;margin-left:auto'
       : 'display:flex;align-items:center;gap:7px;flex:none;order:3';
