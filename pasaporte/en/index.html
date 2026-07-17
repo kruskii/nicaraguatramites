@@ -406,17 +406,24 @@ a{color:inherit}
           </sc-for>
         </ol>
         <div style="margin-top:20px;padding-top:16px;border-top:1px solid rgba(13,91,176,.15)">
-          <h3 style="font-size:15px;font-weight:700;color:#0d5bb0;margin:0 0 10px">{{ t.canada.westernUnion.title }}</h3>
-          <p style="font-size:14.5px;line-height:1.6;color:#3a362c;margin:0 0 18px">{{ t.canada.westernUnion.intro }}</p>
-          <ol style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:13px;counter-reset:wu">
-            <sc-for list="{{ westernUnionSteps }}" as="s" hint-placeholder-count="4">
-              <li style="display:flex;gap:13px;font-size:14.5px;line-height:1.55;color:#46423a">
-                <span style="flex:none;width:22px;height:22px;border-radius:50%;border:1.5px solid #0d5bb0;color:#0d5bb0;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;margin-top:1px">{{ s.n }}</span>
-                <span>{{ s.text }}</span>
-              </li>
-            </sc-for>
-          </ol>
-          <div style="font-size:13.5px;line-height:1.55;color:#8a7e62;margin-top:18px;font-family:'Newsreader',serif;font-style:italic">{{ t.canada.westernUnion.tip }}</div>
+          <button onClick="{{ toggleWu }}" style="all:unset;cursor:pointer;display:flex;align-items:center;gap:10px;width:100%">
+            <i class="bi bi-chevron-down" style="font-size:13px;color:#0d5bb0;transition:transform .2s;transform:{{ wuChevronTransform }}"></i>
+            <h3 style="font-size:15px;font-weight:700;color:#0d5bb0;margin:0">{{ t.canada.westernUnion.title }}</h3>
+          </button>
+          <sc-if value="{{ wuOpen }}" hint-placeholder-val="{{ false }}">
+            <div style="margin-top:14px">
+              <p style="font-size:14.5px;line-height:1.6;color:#3a362c;margin:0 0 18px">{{ t.canada.westernUnion.intro }}</p>
+              <ol style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:13px;counter-reset:wu">
+                <sc-for list="{{ westernUnionSteps }}" as="s" hint-placeholder-count="4">
+                  <li style="display:flex;gap:13px;font-size:14.5px;line-height:1.55;color:#46423a">
+                    <span style="flex:none;width:22px;height:22px;border-radius:50%;border:1.5px solid #0d5bb0;color:#0d5bb0;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;margin-top:1px">{{ s.n }}</span>
+                    <span>{{ s.text }}</span>
+                  </li>
+                </sc-for>
+              </ol>
+              <div style="font-size:13.5px;line-height:1.55;color:#8a7e62;margin-top:18px;font-family:'Newsreader',serif;font-style:italic">{{ t.canada.westernUnion.tip }}</div>
+            </div>
+          </sc-if>
         </div>
         <div style="font-size:13.5px;line-height:1.55;color:#8a7e62;margin-top:20px;padding-top:16px;border-top:1px solid rgba(13,91,176,.15);font-family:'Newsreader',serif;font-style:italic">{{ t.canada.note }}</div>
       </div>
@@ -625,6 +632,7 @@ class Component extends DCLogic {
     openNavGroupSticky: null,
     openNavGroupMast: null,
     openRegions: {},
+    wuOpen: false,
     portalUrlCopied: false,
     cookieChoice: (typeof localStorage !== 'undefined' && localStorage.getItem('np_cookie_consent')) || null,
   };
@@ -752,7 +760,7 @@ class Component extends DCLogic {
                         {
                               "n": "4",
                               "title": "Review and submit your application",
-                              "body": "Review everything carefully, then submit. Your status updates to \"Application Submitted\" — you won't get an email confirmation, so periodically check the portal for the latest status of your application. Within a few weeks it changes to \"Under Review,\" when immigration reviews your documents."
+                              "body": "Review everything carefully, then submit. Your status updates to \"{{BOLD}}Application Submitted{{/BOLD}}\" — you won't get an email confirmation, so periodically check the portal for the latest status of your application. Within a few weeks it changes to \"{{BOLD}}Under Review{{/BOLD}},\" when immigration reviews your documents."
                         },
                         {
                               "n": "5",
@@ -885,7 +893,7 @@ class Component extends DCLogic {
             "followup": {
                   "title": "Follow up on an application",
                   "detourPre": "If your status is stuck on \"",
-                  "detourBold": "EnRevision",
+                  "detourBold": "En Revisión",
                   "detourPost": "\" (Under Review) for more than 60 days and Immigration hasn't reached out, something is likely wrong with your application — follow up directly with immigration in Managua.",
                   "detourLink": "See “If You’re Stuck” for more details →",
                   "intro": "This is the DGME (Dirección General de Migración y Extranjería) — Nicaragua's immigration authority in Managua, where every passport application for Nicaraguans abroad is processed.",
@@ -1073,7 +1081,7 @@ class Component extends DCLogic {
             },
             "community": {
                   "title": "Community",
-                  "body": "Welcome 👋. This page came about after hearing repeated stories from Nicaraguans abroad struggling to renew their passports — information scattered across consulate flyers, social media, and word of mouth. The goal is to centralize what we've learned in one place, and keep it as up to date as possible — which means we rely on the community to flag changes as they happen.",
+                  "body": "Welcome 👋. This page centralizes what the community has learned about renewing a Nicaraguan passport abroad — help us keep it accurate by flagging changes as they happen.",
                   "shareLabel": "Share your experience",
                   "shareUrl": "mailto:info@guiaconsularnicaragua.com?subject=Experiencia%20%2F%20Sugerencia",
                   "reportLabel": "Report a change or suggest an improvement",
@@ -1202,7 +1210,7 @@ class Component extends DCLogic {
                         {
                               "n": "4",
                               "title": "Revisa y envía tu solicitud",
-                              "body": "Revisa todo con cuidado y presiona enviar. Tu estado cambiará a \"Solicitud Enviada\"; no recibirás confirmación por correo, así que revisa periódicamente el portal para conocer el estado más reciente de tu solicitud. En unas semanas cambiará a \"En Revisión\", cuando migración revise tus documentos."
+                              "body": "Revisa todo con cuidado y presiona enviar. Tu estado cambiará a \"{{BOLD}}Solicitud Enviada{{/BOLD}}\"; no recibirás confirmación por correo, así que revisa periódicamente el portal para conocer el estado más reciente de tu solicitud. En unas semanas cambiará a \"{{BOLD}}En Revisión{{/BOLD}}\", cuando migración revise tus documentos."
                         },
                         {
                               "n": "5",
@@ -1334,7 +1342,9 @@ class Component extends DCLogic {
             },
             "followup": {
                   "title": "Seguimiento de una solicitud",
-                  "detourIntro": "Si tu estado permanece en \"En Revisión\" por más de 60 días y migración no te ha contactado, es probable que algo esté mal con tu solicitud — da seguimiento directamente con migración en Managua.",
+                  "detourPre": "Si tu estado permanece en \"",
+                  "detourBold": "En Revisión",
+                  "detourPost": "\" por más de 60 días y migración no te ha contactado, es probable que algo esté mal con tu solicitud — da seguimiento directamente con migración en Managua.",
                   "detourLink": "Consulta “Si te atascas” para más detalles →",
                   "intro": "Esta es la DGME (Dirección General de Migración y Extranjería) — la autoridad migratoria de Nicaragua en Managua, donde se procesa cada solicitud de pasaporte de nicaragüenses en el exterior.",
                   "card": {
@@ -1521,7 +1531,7 @@ class Component extends DCLogic {
             },
             "community": {
                   "title": "Comunidad",
-                  "body": "Bienvenido 👋. Esta página surgió tras escuchar historias repetidas de nicaragüenses en el exterior que luchan por renovar su pasaporte — información dispersa en volantes de consulados, redes sociales y de boca en boca. El objetivo es centralizar lo que hemos aprendido en un solo lugar, y mantenerlo lo más actualizado posible — lo cual significa que dependemos de la comunidad para avisarnos de los cambios a medida que ocurren.",
+                  "body": "Bienvenido 👋. Esta página centraliza lo que la comunidad ha aprendido sobre renovar el pasaporte nicaragüense desde el exterior — ayúdanos a mantenerla precisa avisándonos de los cambios a medida que ocurren.",
                   "shareLabel": "Comparte tu experiencia",
                   "shareUrl": "mailto:info@guiaconsularnicaragua.com?subject=Experiencia%20%2F%20Sugerencia",
                   "reportLabel": "Reporta un cambio o sugiere una mejora",
@@ -1618,6 +1628,14 @@ class Component extends DCLogic {
       });
       return React.createElement(React.Fragment, null, out);
     };
+    const renderBoldTokens = (text) => {
+      if (text.indexOf('{{BOLD}}') === -1) return text;
+      const segs = text.split(/(\{\{BOLD\}\}[^{]*\{\{\/BOLD\}\})/);
+      return React.createElement(React.Fragment, null, segs.map((seg, i) => {
+        const m = seg.match(/^\{\{BOLD\}\}([^{]*)\{\{\/BOLD\}\}$/);
+        return m ? React.createElement('strong', { key: i }, m[1]) : seg;
+      }));
+    };
     const WA = 'https://wa.me/17712090427';
     const EMAIL = 'mailto:consuladonicaraguadc@embanic.org';
     const howStepsRaw = t.how.steps.map((s) => {
@@ -1642,7 +1660,7 @@ class Component extends DCLogic {
           s.body, ' ',
           React.createElement('a', { href: '#documents', className: 'np-link', style: { fontWeight: 600, whiteSpace: 'nowrap' } }, s.docLink));
       } else {
-        body = linkifyPortal(s.body);
+        body = s.body.indexOf(PORTAL_URL) !== -1 ? linkifyPortal(s.body) : renderBoldTokens(s.body);
       }
       return { n: s.n, title: s.title, body, isStep: true, isDetour: false };
     });
@@ -1698,14 +1716,6 @@ class Component extends DCLogic {
       };
     });
 
-    const renderBoldTokens = (text) => {
-      if (text.indexOf('{{BOLD}}') === -1) return text;
-      const segs = text.split(/(\{\{BOLD\}\}[^{]*\{\{\/BOLD\}\})/);
-      return React.createElement(React.Fragment, null, segs.map((seg, i) => {
-        const m = seg.match(/^\{\{BOLD\}\}([^{]*)\{\{\/BOLD\}\}$/);
-        return m ? React.createElement('strong', { key: i }, m[1]) : seg;
-      }));
-    };
     const stuckPilotBody1 = renderBoldTokens(t.stuck.pilotAlert.body1);
     const canadaSteps = t.canada.steps.map((s) => {
       if (s.text.indexOf(' · ') !== -1) {
@@ -1845,6 +1855,9 @@ class Component extends DCLogic {
 
     return {
       t, lang, navItems, quickNavItems, navGroupsComputedSticky, navGroupsComputedMast, showNews, showFlag, howSteps, tipsItems, faqItems, canadaSteps, canadaStepsA, canadaStepsB, westernUnionSteps, consulateItems, sectionTags, worldNoteNode, regionGroups, stuckItems, stuckPilotBody1,
+      wuOpen: this.state.wuOpen,
+      wuChevronTransform: this.state.wuOpen ? 'rotate(180deg)' : 'rotate(0deg)',
+      toggleWu: () => this.setState(s => ({ wuOpen: !s.wuOpen })),
       nicaraguaNote,
       portalUrlFull: 'https://' + PORTAL_URL,
       portalUrlCopied: this.state.portalUrlCopied,
