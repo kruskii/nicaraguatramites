@@ -3,9 +3,9 @@
 <head>
 <meta charset="utf-8">
 <title>Guía Consular Nicaragua — Renueva tu Pasaporte Nicaragüense desde el Exterior</title>
-<meta name="description" content="Cómo renovar o solicitar el pasaporte nicaragüense en línea, incluyendo tarifas, documentos requeridos e información consular.">
+<meta name="description" content="Una guía independiente para nicaragüenses en el exterior: cómo renovar o solicitar el pasaporte nicaragüense en línea, documentos requeridos e información consular.">
 <meta property="og:title" content="Guía Consular Nicaragua — Renueva tu Pasaporte Nicaragüense desde el Exterior">
-<meta property="og:description" content="Cómo renovar o solicitar el pasaporte nicaragüense en línea, incluyendo tarifas.">
+<meta property="og:description" content="Una guía independiente para nicaragüenses en el exterior: cómo renovar o solicitar el pasaporte nicaragüense en línea.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://guiaconsularnicaragua.com/pasaporte/es/">
 <meta property="og:locale" content="es_419">
@@ -405,7 +405,20 @@ a{color:inherit}
             </li>
           </sc-for>
         </ol>
-        <div style="font-size:13.5px;line-height:1.55;color:#8a7e62;margin-top:20px;padding-top:16px;font-family:'Newsreader',serif;font-style:italic">{{ t.canada.note }}</div>
+        <div style="margin-top:20px;padding-top:16px;border-top:1px solid rgba(13,91,176,.15)">
+          <h3 style="font-size:15px;font-weight:700;color:#0d5bb0;margin:0 0 10px">{{ t.canada.westernUnion.title }}</h3>
+          <p style="font-size:14.5px;line-height:1.6;color:#3a362c;margin:0 0 18px">{{ t.canada.westernUnion.intro }}</p>
+          <ol style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:13px;counter-reset:wu">
+            <sc-for list="{{ westernUnionSteps }}" as="s" hint-placeholder-count="4">
+              <li style="display:flex;gap:13px;font-size:14.5px;line-height:1.55;color:#46423a">
+                <span style="flex:none;width:22px;height:22px;border-radius:50%;border:1.5px solid #0d5bb0;color:#0d5bb0;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;margin-top:1px">{{ s.n }}</span>
+                <span>{{ s.text }}</span>
+              </li>
+            </sc-for>
+          </ol>
+          <div style="font-size:13.5px;line-height:1.55;color:#8a7e62;margin-top:18px;font-family:'Newsreader',serif;font-style:italic">{{ t.canada.westernUnion.tip }}</div>
+        </div>
+        <div style="font-size:13.5px;line-height:1.55;color:#8a7e62;margin-top:20px;padding-top:16px;border-top:1px solid rgba(13,91,176,.15);font-family:'Newsreader',serif;font-style:italic">{{ t.canada.note }}</div>
       </div>
     </section>
 
@@ -662,7 +675,7 @@ class Component extends DCLogic {
                   "how": "July 2026",
                   "documents": "June 2026",
                   "consulates": "May 2026",
-                  "canada": "May 2026",
+                  "canada": "July 2026",
                   "stuck": "June 2026",
                   "tips": "July 2026",
                   "faq": "March 2026",
@@ -897,16 +910,29 @@ class Component extends DCLogic {
                         },
                         {
                               "n": "2",
-                              "text": "Monitor your application status in the portal. When it changes to \"{{BOLD}}Enviado{{/BOLD}}\" (Sent), watch for a notification from the embassy that they have your passport. If you don't hear from them within 30 days, contact the embassy to confirm they have it and coordinate mailing."
+                              "text": "Monitor your application status in the portal. When it changes to \"{{BOLD}}Enviado{{/BOLD}}\" (Sent), the embassy will contact you to let you know your passport is ready. If you don't hear from them within 30 days, contact the embassy to confirm they have it."
                         },
                         {
                               "n": "3",
-                              "text": "Once you confirm the embassy has your passport, arrange the mailing of your passport using UPS, DHL, or FedEx. You will have to pay for this shipping."
+                              "text": "Once you confirm the embassy has your passport, tell them you're in Canada and ask them to mail it to you, and arrange the mailing using UPS, DHL, or FedEx. You will have to pay for this shipping — see {{BOLD}}Paying via Western Union{{/BOLD}} below."
                         }
                   ],
                   "contactWhatsapp": "WhatsApp (message only, no phone calls): 771-209-0427",
                   "contactEmail": "Email: consuladonicaraguadc@embanic.org",
-                  "note": "Rules change often. Confirm the current delivery options directly with the embassy before you pay the fee."
+                  "note": "Rules change often. Confirm the current delivery options directly with the embassy before you pay the fee.",
+                  "westernUnion": {
+                        "title": "Paying via Western Union",
+                        "intro": "Here's how to pay for the shipping remotely:",
+                        "steps": [
+                              "{{BOLD}}Create a Western Union account{{/BOLD}} (if you don't already have one) to send the payment online.",
+                              "{{BOLD}}Add the receiver as a contact{{/BOLD}} in your Western Union account. You'll need: · Their full name · Their cell phone number · Their state (District of Columbia, Maryland, or Virginia — confirm which one applies; you only need the state, not their full address)",
+                              "{{BOLD}}Set up the transfer for $60 USD, for cash pickup{{/BOLD}} (not direct deposit).",
+                              "Once submitted, {{BOLD}}copy the MTCN tracking number{{/BOLD}} from the confirmation.",
+                              "{{BOLD}}Send the MTCN number{{/BOLD}} to the receiver (via text or WhatsApp) so they can pick up the funds.",
+                              "{{BOLD}}Ask them to ship the passport via UPS, DHL, or FedEx{{/BOLD}} and provide you with the tracking number. At this point, also {{BOLD}}reconfirm your full name, complete mailing address, and phone number{{/BOLD}} with them to make sure there are no shipping errors."
+                        ],
+                        "tip": "Tip: Ask the receiver to send you all their contact details (full name, phone number, state) via WhatsApp ahead of time, so you have everything ready when setting up the Western Union transfer."
+                  }
             },
             "stuck": {
                   "title": "If You’re Stuck",
@@ -1099,7 +1125,7 @@ class Component extends DCLogic {
                   "how": "julio 2026",
                   "documents": "junio 2026",
                   "consulates": "mayo 2026",
-                  "canada": "mayo 2026",
+                  "canada": "julio 2026",
                   "stuck": "junio 2026",
                   "tips": "julio 2026",
                   "faq": "marzo 2026",
@@ -1332,16 +1358,29 @@ class Component extends DCLogic {
                         },
                         {
                               "n": "2",
-                              "text": "Da seguimiento al estado de tu trámite en el portal. Cuando cambie a \"Enviado\", esté atento a una notificación de la embajada avisando que ya tienen tu pasaporte. Si no tienes noticias en 30 días, contacta a la embajada para confirmar y coordinar el envío."
+                              "text": "Da seguimiento al estado de tu trámite en el portal. Cuando cambie a \"Enviado\", la embajada te contactará para avisarte que tu pasaporte está listo. Si no tienes noticias en 30 días, contacta a la embajada para confirmar."
                         },
                         {
                               "n": "3",
-                              "text": "Una vez confirmes que la embajada tiene tu pasaporte, coordina el envío por UPS, DHL o FedEx. Tendrás que pagar este envío."
+                              "text": "Una vez confirmes que la embajada tiene tu pasaporte, dile que estás en Canadá y pedíle que te lo envíe por correo, y coordina el envío por UPS, DHL o FedEx. Tendrás que pagar este envío — consulta {{BOLD}}Pagando por Western Union{{/BOLD}} más abajo."
                         }
                   ],
                   "contactWhatsapp": "WhatsApp (solo mensajes, sin llamadas): 771-209-0427",
                   "contactEmail": "Correo: consuladonicaraguadc@embanic.org",
-                  "note": "Las reglas cambian con frecuencia. Confirma las opciones de entrega directamente con la embajada antes de pagar."
+                  "note": "Las reglas cambian con frecuencia. Confirma las opciones de entrega directamente con la embajada antes de pagar.",
+                  "westernUnion": {
+                        "title": "Pagando por Western Union",
+                        "intro": "Así puede pagar el envío de forma remota:",
+                        "steps": [
+                              "{{BOLD}}Cree una cuenta de Western Union{{/BOLD}} (si no tiene una) para enviar el pago en línea.",
+                              "{{BOLD}}Agregue al destinatario como contacto{{/BOLD}} en su cuenta de Western Union. Necesitará: · Su nombre completo · Su número de celular · Su estado (Distrito de Columbia, Maryland o Virginia — confirme cuál aplica; solo necesita el estado, no la dirección completa)",
+                              "{{BOLD}}Configure la transferencia por $60 USD, para recogida en efectivo{{/BOLD}} (no depósito directo).",
+                              "Una vez enviado, {{BOLD}}copie el número de rastreo MTCN{{/BOLD}} de la confirmación.",
+                              "{{BOLD}}Envíe el número MTCN{{/BOLD}} al destinatario (por mensaje de texto o WhatsApp) para que pueda recoger el dinero.",
+                              "{{BOLD}}Pídales que envíen el pasaporte por UPS, DHL o FedEx{{/BOLD}} y que le proporcionen el número de rastreo. En este momento, también {{BOLD}}reconfirme su nombre completo, dirección postal completa y número de teléfono{{/BOLD}} con ellos para evitar errores en el envío."
+                        ],
+                        "tip": "Consejo: Pida al destinatario que le envíe todos sus datos de contacto (nombre completo, número de teléfono, estado) por WhatsApp con anticipación, para que tenga todo listo al configurar la transferencia de Western Union."
+                  }
             },
             "stuck": {
                   "title": "Si te atascas",
@@ -1678,6 +1717,14 @@ class Component extends DCLogic {
     });
     const canadaStepsA = canadaSteps.slice(0, 2);
     const canadaStepsB = canadaSteps.slice(2);
+    const westernUnionSteps = t.canada.westernUnion.steps.map((text, i) => {
+      if (text.indexOf(' · ') !== -1) {
+        const parts = text.split(' · ');
+        return { n: String(i + 1), text: React.createElement(React.Fragment, null,
+          parts.map((p, j) => React.createElement('div', { key: j, style: j > 0 ? { marginTop: 4 } : null }, renderBoldTokens(p)))) };
+      }
+      return { n: String(i + 1), text: renderBoldTokens(text) };
+    });
 
     const howSteps = [];
     howStepsRaw.forEach((st) => {
@@ -1797,7 +1844,7 @@ class Component extends DCLogic {
       (this.state.sticky ? 'transform:translateY(0);opacity:1;pointer-events:auto' : 'transform:translateY(-100%);opacity:0;pointer-events:none');
 
     return {
-      t, lang, navItems, quickNavItems, navGroupsComputedSticky, navGroupsComputedMast, showNews, showFlag, howSteps, tipsItems, faqItems, canadaSteps, canadaStepsA, canadaStepsB, consulateItems, sectionTags, worldNoteNode, regionGroups, stuckItems, stuckPilotBody1,
+      t, lang, navItems, quickNavItems, navGroupsComputedSticky, navGroupsComputedMast, showNews, showFlag, howSteps, tipsItems, faqItems, canadaSteps, canadaStepsA, canadaStepsB, westernUnionSteps, consulateItems, sectionTags, worldNoteNode, regionGroups, stuckItems, stuckPilotBody1,
       nicaraguaNote,
       portalUrlFull: 'https://' + PORTAL_URL,
       portalUrlCopied: this.state.portalUrlCopied,
