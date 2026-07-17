@@ -149,6 +149,7 @@ class Component extends DCLogic {
   };
 
   componentDidMount() {
+    if (this.state.cookieChoice === 'accepted') this.loadGA();
     this._onResize = () => {
       const m = window.innerWidth < 720;
       if (m !== this.state.isMobile) this.setState({ isMobile: m });
@@ -164,6 +165,20 @@ class Component extends DCLogic {
   componentWillUnmount() {
     window.removeEventListener('resize', this._onResize);
     window.removeEventListener('scroll', this._onScroll);
+  }
+
+  loadGA() {
+    if (window.__gaLoaded) return;
+    window.__gaLoaded = true;
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ window.dataLayer.push(arguments); }
+    window.gtag = gtag;
+    gtag('js', new Date());
+    gtag('config', 'G-2XEW8QR9TZ');
+    const s = document.createElement('script');
+    s.async = true;
+    s.src = 'https://www.googletagmanager.com/gtag/js?id=G-2XEW8QR9TZ';
+    document.head.appendChild(s);
   }
 
   CONTENT = {
@@ -233,7 +248,7 @@ class Component extends DCLogic {
     return 'appearance:none;border:none;background:none;cursor:pointer;font-family:Archivo,system-ui,sans-serif;font-size:13px;font-weight:700;letter-spacing:.04em;padding:2px 2px;color:' + (active ? '#0d5bb0' : '#78725f') +
       ';border-bottom:2px solid ' + (active ? '#0d5bb0' : 'transparent') + ';transition:color .15s';
   }
-  acceptCookies = () => { localStorage.setItem('np_cookie_consent','accepted'); this.setState({ cookieChoice:'accepted' }); };
+  acceptCookies = () => { localStorage.setItem('np_cookie_consent','accepted'); this.setState({ cookieChoice:'accepted' }); this.loadGA(); };
   declineCookies = () => { localStorage.setItem('np_cookie_consent','declined'); this.setState({ cookieChoice:'declined' }); };
   toggleFeedbackMenu = () => this.setState(s => ({ feedbackMenuOpen: !s.feedbackMenuOpen }));
 
